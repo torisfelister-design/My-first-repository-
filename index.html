@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="toris.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <span class="dot"></span>
+      </a>
+
+      <nav class="links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#Projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="menu btn" id="menuBtn" aria-expanded="false">
+        Menu
+      </button>
+    </div>
+
+    <!-- Mobile Nav -->
+    <nav id="mobileNav" class="container" hidden>
+      <div class="grid" style="padding-bottom: 12px;">
+         <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#Projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section id="home" class="container hero">
+  <div class="hero-card grid hero-bold">
+    
+    <div class="hero-img-circle">
+      <img src="toris.jpg" alt="Felister Toris">
+    </div>
+    <div>
+      <h1>I’m <span class="spa">Felister Toris</span></h1>
+      <p>
+        A front-end developer who loves mixing bold visuals with smooth,
+        user-focused design. If it’s interactive, animated, or visually striking —
+        I want to build it.
+      </p>
+      <a class="btn primary" href="#contact">Work With Me</a>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- About -->
+  <section id="about" class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-sub">A little bit about who I am and what I enjoy doing.</p>
+
+    <div class="card grid" style="grid-template-columns: .9fr 1.1fr; align-items: center;">
+      <img src="code.jpg" alt="Toris at work" />
+
+      <div>
+        <p>
+          I enjoy building simple, clean digital experiences. I like blending design and coding in
+          a way that feels natural and easy to follow. My goal is always to make something that feels
+          intuitive to the person using it.
+        </p>
+
+        <div class="button">
+          <span class="btn">Visual Design</span>
+          <span class="btn">UX Research</span>
+          <span class="btn">Prototyping</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects -->
+  <section id="Projects" class="gallery">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Some of the work I've done recently.</p>
+
+    <div class="gallery-grid">
+      <img src="design1.jpg" alt="Design work 1" />
+      <img src="design2.jpg" alt="Design work 2" />
+      <img src="design3.jpg" alt="Design work 3" />
+      <img src="design4.jpg" alt="Design work 4" />
+      <img src="design5.jpg" alt="Design work 5" />
+      <img src="design6.jpg" alt="Design work 6" />
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-sub">If you'd like to chat or work together, feel free to reach out.</p>
+
+    <div class="contact-card">
+      <form name="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out!')">
+
+        <label>
+          <span>Full Name</span>
+          <input required type="text" name="name" placeholder="Your full name">
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input required type="email" name="email" placeholder="you@example.com">
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea required name="message" rows="5" placeholder="Type your message here..."></textarea>
+        </label>
+
+        <button class="btn primary" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© <span id="year"></span> Felister Toris. Thanks for stopping by.</p>
+
+      <div class="socials">
+        <a href="#home" class="footer-link">Back to Top ↑</a>
+        <a href="https://github.com/torisfelister-design/My-first-repository-" target="_blank" class="footer-link">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu
+    const btn = document.getElementById('menuBtn');
+    const mobile = document.getElementById('mobileNav');
+
+    btn.addEventListener('click', () => {
+      if (mobile.hasAttribute('hidden')) {
+        mobile.removeAttribute('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+      } else {
+        mobile.setAttribute('hidden', '');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>
